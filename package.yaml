@@ -1,0 +1,26 @@
+name:                test-doctest-nix
+version:             0.1.0.0
+license:             BSD3
+author:              Foo
+maintainer:          foo@example.com
+copyright:           "2021 Foo"
+build-type:          Custom
+custom-setup:
+  dependencies:
+    - base
+    - Cabal
+    - cabal-doctest
+
+dependencies:
+  - base >= 4.7 && < 5
+  - template-haskell
+
+library:
+  source-dirs: src
+
+tests:
+  doctests:
+    main: Main.hs
+    dependencies:
+    - doctest
+    - test-doctest-nix
