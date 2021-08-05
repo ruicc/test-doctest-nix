@@ -3,5 +3,15 @@ let
   pkgs = import haskellNix.sources.nixpkgs-unstable haskellNix.nixpkgsArgs;
   project =  pkgs.haskell-nix.project {
     src = ./.;
+    #modules = [{
+    #  #packages.test-doctest-nix.components.tests.doctests.configureAllComponents = false;
+    #  #packages.test-doctest-nix.components.tests.doctests.postInstall = ''
+    #  #  echo PostInstallAAA
+    #  #  for i in $out/lib/x86_64-linux-ghc-8.8.4/*.so; do
+    #  #    cp -v "$i" $out/lib/$(basename ''${i/-ghc8.8.4/})
+    #  #  done
+    #  #  echo PostInstallBBB
+    #  #  '';
+    #}];
   };
 in project.test-doctest-nix.checks.doctests
