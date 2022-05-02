@@ -1,9 +1,7 @@
-{-# LANGUAGE QuasiQuotes #-}
 module Foo where
 
-import QQ (r)
-
-foo = [r| Hello |]
+import Data.Map
+import Data.HashMap.Strict as HMap
 
 -- | Compute Fibonacci numbers
 --
@@ -14,6 +12,9 @@ foo = [r| Hello |]
 --
 -- >>> fib 5
 -- 5
+--
+-- >>> HMap.empty
+-- fromList []
 fib :: Int -> Int
 fib 0 = 0
 fib 1 = 1

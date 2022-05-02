@@ -4,6 +4,7 @@ license:             BSD3
 author:              Foo
 maintainer:          foo@example.com
 copyright:           "2021 Foo"
+
 build-type:          Custom
 custom-setup:
   dependencies:
@@ -14,6 +15,8 @@ custom-setup:
 dependencies:
   - base >= 4.7 && < 5
   - template-haskell
+  - containers
+  - unordered-containers
 
 library:
   source-dirs: src
